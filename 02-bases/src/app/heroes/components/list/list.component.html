@@ -1,0 +1,32 @@
+<h2>Heroes List</h2>
+
+<!-- <ul class="mt-2 list-group">
+  <li *ngFor="let item of heroes" class="list-group-item">{{ item }}</li>
+</ul> -->
+
+<button class="btn btn-outline-danger" (click)="deleteHero()">
+  Borrar Heroe
+</button>
+
+<div *ngIf="deletedHero; else nothingWasDeleted">
+  <h3 *ngIf="true" class="my-2">
+    Heroe <span class="text-danger">{{ deletedHero }}</span> eliminado
+  </h3>
+</div>
+
+<ng-template #nothingWasDeleted>
+  <h3 class="my-2">No ha borrado nada...</h3>
+</ng-template>
+
+<ol class="list-group list-group-numbered mt-3">
+  <li
+    *ngFor="let item of heroes"
+    class="list-group-item d-flex justify-content-between align-items-start"
+  >
+    <div class="ms-2 me-auto">
+      <div class="fw-bold">{{ item }}</div>
+      Some description
+    </div>
+    <span class="badge text-bg-primary rounded-pill">SuperHero</span>
+  </li>
+</ol>
